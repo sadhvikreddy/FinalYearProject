@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+          h2{
+            color: #2acdc1;
+            font-family: Baskerville;
+        }
+
+        .boxed {
+            border: 2px solid #04049d;
+            width: fit-content;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+
+        h3{
+            color: #000000;
+            font-family: Baskerville;
+        }
+
+        .body{
+        }
+
+        .heade{
+            position: fixed;
+            left: 41.5%;
+        }
+
+.wrapper{
+    position: fixed;
+    top: 200px;
+    z-index: -1;
+    height: 100%;
+}
+
+.sym {
+    top: 300px;
+    text-align: justify;
+    position: fixed;
+    width: 40%;
+    left: 70px;
+    border: 2px solid #04049d;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-style: italic;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height:400px;
+    overflow: scroll;
+}
+.tre {
+    top: 300px;
+    position: fixed;
+    text-align: justify;
+    width: 43.5%;
+    margin-left: 50%;
+    border: 2px solid #04049d;
+    padding-left: 15px;
+    padding-right:15px;
+    padding-bottom: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-style: italic;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 400px;
+    overflow: scroll;
+}
+
+        .cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+
+.menu,
+.submenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu {
+  margin: 50px auto;
+  width: 800px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.menu > li {
+  background: #2acdc1;
+  float: left;
+  position: relative;
+  transform: skewX(25deg);
+}
+
+.menu a {
+  display: block;
+  color: #04049d;
+  text-transform: uppercase;
+  text-decoration: none;
+font-family: helvetica neue, helvetica, sans-serif;
+      font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  opacity: 0.75;
+}
+
+.menu li:hover {
+  background: #e74c3c;
+}
+
+.menu > li > a {
+  transform: skewX(-25deg);
+  padding: 1em 2em;
+}
+
+.submenu {
+  position: absolute;
+  width: 200px;
+  left: 50%; margin-left: -100px;
+  transform: skewX(-25deg);
+  transform-origin: left top;
+}
+
+.submenu li {
+  background-color: #2acdc1;
+  position: relative;
+  overflow: hidden;
+}
+
+.submenu > li > a {
+  padding: 1em 2em;
+}
+
+.submenu > li::after {
+  content: '';
+  position: absolute;
+  top: -125%;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 50px rgba(0, 0, 0, .9);
+}
+
+
+.submenu > li:nth-child(odd){
+  transform: skewX(-25deg) translateX(0);
+}
+
+.submenu > li:nth-child(odd) > a {
+  transform: skewX(25deg);
+}
+
+.submenu > li:nth-child(odd)::after {
+  right: -50%;
+  transform: skewX(-25deg) rotate(3deg);
+}
+
+
+.submenu > li:nth-child(even){
+  transform: skewX(25deg) translateX(0);
+}
+
+.submenu > li:nth-child(even) > a {
+  transform: skewX(-25deg);
+}
+
+.submenu > li:nth-child(even)::after {
+  left: -50%;
+  transform: skewX(25deg) rotate(3deg);
+}
+.submenu,
+.submenu li {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.submenu li {
+  transition: .2s ease transform;
+}
+
+.menu > li:hover .submenu,
+.menu > li:hover .submenu li {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu > li:hover .submenu li:nth-child(even){
+  transform: skewX(25deg) translateX(15px);
+}
+
+.menu > li:hover .submenu li:nth-child(odd){
+  transform: skewX(-25deg) translateX(-15px);
+}
+    </style>
+    <meta charset="UTF-8">
+    <title>Database</title>
+    <center>
+     <div class="boxed">
+<h2>
+Database Information
+</h2>
+    </div>
+    </center>
+</head>
+<body>
+<form method="post" id="thisform">
+    <ul class="menu cf">
+      <li>
+      <a>Tomato</a>
+      <ul class="submenu">
+        <li><a onclick="go('Tomato','Bacterial Spot')">Bacterial Spot</a></li>
+        <li><a onclick="go('Tomato','Early Blight')">Early Blight</a></li>
+        <li><a onclick="go('Tomato','Late Blight')">Late Blight</a></li>
+          <li><a onclick="go('Tomato','Leaf Mold')">Leaf Mold</a></li>
+        <li><a onclick="go('Tomato','Septoria Leaf Spot')">Septoria Leaf Spot</a></li>
+        <li><a onclick="go('Tomato','Spider Mites')">Spider Mites</a></li>
+          <li><a onclick="go('Tomato','Target Spot')">Target Spot</a></li>
+        <li><a onclick="go('Tomato','Yellow Leaf Curl Virus')">Yellow Leaf curl</a></li>
+        <li><a onclick="go('Tomato','Mosaic Virus')">Mosaic Virus</a></li>
+      </ul>
+  </li>
+  <li>
+    <a>Apple</a>
+    <ul class="submenu">
+      <li><a onclick="go('Apple','Scab')">Scab</a></li>
+      <li><a onclick="go('Apple','Black Rot')">Black Rot</a></li>
+      <li><a onclick="go('Apple','Cedar Apple Rust')">Cedar Apple Rust</a></li>
+    </ul>
+  </li>
+  <li>
+      <a>Cherry</a>
+      <ul class="submenu">
+        <li><a onclick="go('Cherry','Powdery Mildew')">Powdery Mildew</a></li>
+      </ul>
+  </li>
+  <li>
+      <a>Corn Maize</a>
+      <ul class="submenu">
+      <li><a onclick="go('Corn Maize','Cercospora leaf spot')">Cercospora Leaf Spot</a></li>
+      <li><a onclick="go('Corn Maize','Common rust')">Common Rust</a></li>
+      <li><a onclick="go('Corn Maize','Northren Leaf Blight')">Northern Leaf Blight</a></li>
+    </ul>
+  </li>
+  <li>
+      <a>Grape</a>
+      <ul class="submenu">
+        <li><a onclick="go('Grape','Black Rot')">Black Rot</a></li>
+        <li><a onclick="go('Grape','Esca')">Esca</a></li>
+        <li><a onclick="go('Grape','Leaf Blight')">Leaf Blight</a></li>
+      </ul>
+  </li>
+      <li>
+      <a>Orange</a>
+      <ul class="submenu">
+        <li><a onclick="go('Orange','Haunglongbing')">Haunglongbing (Citrus Greening)</a></li>
+      </ul>
+  </li>
+      <li>
+      <a>Peach</a>
+      <ul class="submenu">
+        <li><a onclick="go('Peach','Bacterial Spot')">Bacterial Spot</a></li>
+      </ul>
+  </li>
+      <li>
+      <a>Pepper</a>
+      <ul class="submenu">
+        <li><a onclick="go('Pepper','Bacterial Spot')">Bacterial Spot</a></li>
+      </ul>
+  </li>
+      <li>
+      <a>Potato</a>
+      <ul class="submenu">
+        <li><a onclick="go('Potato','Early Blight')">Early Blight</a></li>
+        <li><a onclick="go('Potato','Late Blight')">Late Blight</a></li>
+      </ul>
+  </li>
+      <li>
+      <a>Squash</a>
+      <ul class="submenu">
+        <li><a onclick="go('Squash','Powdery Mildew')">Powdery Mildew</a></li>
+      </ul>
+  </li>
+      <li>
+      <a>Strawberry</a>
+      <ul class="submenu">
+        <li><a onclick="go('Strawberry','Leaf Scorch')">Leaf Scorch</a></li>
+      </ul>
+  </li>
+</ul>
+    <input type="text" name="pn" id="pn" style="height: 0px; width: 0px;visibility: hidden"/>
+    <input type="text" name="dn" id="dn" style="height: 0px; width: 0px;visibility: hidden"/>
+    <script>
+        function go(plant,disease) {
+            document.getElementById("pn").value = plant;
+            document.getElementById("dn").value = disease;
+            document.forms['thisform'].submit();
+        }
+    </script>
+</form>
+</body>
+</html>
